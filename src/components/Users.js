@@ -10,22 +10,22 @@ export default function Users() {
                 name="man_with_beard"/>
             <div className="users__block">
                 <User 
-                    src="https://i.ytimg.com/vi/x_HL0wiK4Zc/maxresdefault.jpg"
+                    src="https://img1.grunge.com/img/gallery/10-scientific-effects-that-happen-when-a-man-grows-a-beard/intro-1542050589.jpg"
                     alt="мужик с бородой"
                     name="man_with_beard"
                     min/>
                 <User 
-                    src="https://i.ytimg.com/vi/x_HL0wiK4Zc/maxresdefault.jpg"
+                    src="https://img1.grunge.com/img/gallery/10-scientific-effects-that-happen-when-a-man-grows-a-beard/intro-1542050589.jpg"
                     alt="мужик с бородой"
                     name="man_with_beard"
                     min/>
                 <User 
-                    src="https://i.ytimg.com/vi/x_HL0wiK4Zc/maxresdefault.jpg"
+                    src="https://img1.grunge.com/img/gallery/10-scientific-effects-that-happen-when-a-man-grows-a-beard/intro-1542050589.jpg"
                     alt="мужик с бородой"
                     name="man_with_beard"
                     min/>
                 <User 
-                    src="https://i.ytimg.com/vi/x_HL0wiK4Zc/maxresdefault.jpg"
+                    src="https://img1.grunge.com/img/gallery/10-scientific-effects-that-happen-when-a-man-grows-a-beard/intro-1542050589.jpg"
                     alt="мужик с бородой"
                     name="man_with_beard"
                     min/>
