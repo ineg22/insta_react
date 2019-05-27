@@ -17,4 +17,13 @@ export default class InstaService {
         const res = await this.getResource('posts/');
         return res;
     }
+
+    getAllUsers = async() => {
+        const posts = await this.getAllPosts();
+        const users = posts.map(user => {
+            const {name, altname, photo} = user;
+            return  {name, altname, photo};
+        });
+        return users;
+    }
 }
