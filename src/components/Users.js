@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import User from './User';
 import InstaService from '../services/instaservice';
+import ErrorMessage from './ErrorMessage';
 
 export default class Users extends Component {
     InstaService = new InstaService();
     state = {
-        users: []
+        users: [],
+        error: false
     }
 
     componentDidMount() {
@@ -15,32 +17,43 @@ export default class Users extends Component {
     updateUsers() {
         this.InstaService.getAllUsers()
         .then(this.onUsersLoaded)
-        .catch(() => {console.log('error in getAllUsers')})
+        .catch(this.onError);
     }
 
     onUsersLoaded = (users) => {
         this.setState({
-            users
+            users,
+            error: false
+        })
+    }
+
+    onError = (err) => {
+        this.setState({
+            error: true
         })
     }
 
     renderProps (arr) {
         return arr.map((item) => {
-            const {name, altname, photo} = item;
+            const {name, altname, photo, id} = item;
 
             return (
                 <User
                     src={photo}
                     alt={altname}
                     name={name}
+                    key={id}
                     min/>
             );
         })
     }
 
     render () {
-        const {users} = this.state;
-        const item = this.renderProps(users);
+        const {users, error} = this.state;
+        if (error) {
+            return <ErrorMessage/>
+        }
+        const items = this.renderProps(users);
 
         return (
             <div className="right">
@@ -49,7 +62,7 @@ export default class Users extends Component {
                     alt="какой-то мужик с бородой"
                     name="man_with_beard"/>
                 <div className="users__block">
-                    {item}
+                    {items}
                 </div>
             </div>
         );
